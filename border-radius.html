@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="border-radius.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Box Shadow Generator</title>
+    </head>
+
+    <body>
+        <div class='top-greetings'>
+            <div class='logo'>
+                <h1>Border Radius</h1>
+            </div>
+            <div class='greeting'>
+                <span>CSS</span>
+                <span>Box</span>
+                <span>Borders</span>
+                <span>Made</span>
+                <span>Super</span>
+                <span>Easy</span>
+            </div>
+        </div>
+
+        <div class='border-radius-group'>
+            <div class='border-radius-ctrls'>
+                <div class="slider-div">
+                    <h3>All Corners</h3>
+                    <h3 class="all-corners-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="150" value="0" class="slider all-corners-val">
+
+                <hr />
+                <br />
+
+                <div class="slider-div">
+                    <h3>Top Left</h3>
+                    <h3 class="top-left-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="150" value="0" class="slider top-left-val">
+
+
+                <div class="slider-div">
+                    <h3>Top Right</h3>
+                    <h3 class="top-right-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="150" value="0" class="slider top-right-val">
+
+                <div class="slider-div">
+                    <h3>Bottom Right</h3>
+                    <h3 class="bot-right-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="150" value="0" class="slider bot-right-val">
+
+                <div class="slider-div">
+                    <h3>Bottom Left</h3>
+                    <h3 class="bot-left-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="150" value="0" class="slider bot-left-val">
+
+                <hr />
+                <br />
+                <br />
+
+                <div class="slider-div">
+                    <h3>Border Width</h3>
+                    <h3 class="border-width-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="50" value="0" class="slider border-width-val">
+
+                <div class="colorpicker-div">
+                    <h3>Box Color</h3>
+                    <div class='colorpicker-div-right'>
+                        <input class="js-box-color jscolor {onFineChange:'updateBoxColor(this)'}" value='70EF69' />
+                        <input class="color-preview box-color" maxlength='6' value="70EF69" />
+                    </div>
+                </div>
+
+                <div class="colorpicker-div">
+                    <h3>Border Color</h3>
+                    <div class='colorpicker-div-right'>
+                        <input class="js-border-color jscolor {onFineChange:'updateBorderColor(this)'}"
+                            value='4A4A4A' />
+                        <input class='color-preview border-color' maxlength='6' value="4A4A4A" />
+                    </div>
+                </div>
+
+                <div class="style-div">
+                    <h3>Border Style</h3>
+                    <select class="style-select">
+                        <option value='solid'>Solid</option>
+                        <option value='dotted'>Dotted</option>
+                        <option value='dashed'>Dashed</option>
+                        <option value='double'>Double</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class='border-radius-preview'>
+                <div class="the-box-bg">
+                    <div class='the-box'></div>
+                </div>
+
+                <div class='border-radius-output'>
+                    <div class="outputs">
+                        <h2 class="general-border">border-radius: 1px 1px 1px;</h2>
+                        <h2 class="webkit-border">-webkit-border-radius: 1px 1px 1px;</h2>
+                        <h2 class="moz-border">-moz-border-radius: 1px 1px 1px;</h2>
+                        <h2 class="border">border: 28px solid #123456;</h2>
+                    </div>
+
+                    <div class="output-saver-loader">
+                        <button class="save-button">Save Preset</button>
+                        <button class="load-button">Load Preset</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="preset-overlay">
+            <div class="save-overlay ">
+                <div class="preset-name">
+                    <h3>Preset Name </h3>
+                    <input maxlength="30" class="preset-name-input" type="text" spellcheck="false" />
+                </div>
+                <hr />
+                <div class="preset-date">
+                    <h3>Attach Date Info</h3>
+                    <div class="preset-date-input">NO</div>
+                </div>
+                <hr />
+                <div class='save-ctrls'>
+                    <button class="save-btn">Save</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="preset-overlay2">
+            <div class="load-overlay ">
+                <h3>Your saved presets</h3>
+                <div class="presets-container">
+                    <div class="preset1 "> </div>
+                    <div class="preset2 "></div>
+                    <div class="preset3 "></div>
+                    <div class="preset4 "></div>
+                    <div class="preset5 "></div>
+                    <div class="preset6 "></div>
+                </div>
+                <button class="cancel-btn2">Cancel</button>
+            </div>
+        </div>
+        </div>
+
+        <script src='jscolor.js'></script>
+        <script src='./borderRadius.js'></script>
+    </body>
+
+</html>

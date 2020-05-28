@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="box-shadow.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Box Shadow Generator</title>
+    </head>
+
+    <body>
+        <div class='top-greetings'>
+            <div class='logo'>
+                <h1>Box Shadow</h1>
+            </div>
+            <div class='greeting'>
+                <span>Create</span>
+                <span>Awesome</span>
+                <span>CSS</span>
+                <span>Box</span>
+                <span>Shadows</span>
+            </div>
+        </div>
+
+        <div class='box-shadow-group'>
+            <div class='box-shadow-ctrls'>
+                <div class="slider-div">
+                    <h3>Horizontal Offset</h3>
+                    <h3 class="h-off-val">0px</h3>
+                </div>
+                <input type="range" min="-50" max="50" value="0" class="slider h-off-val">
+
+                <div class="slider-div">
+                    <h3>Vertical Offset</h3>
+                    <h3 class="v-off-val">0px</h3>
+                </div>
+                <input type="range" min="-50" max="50" value="0" class="slider v-off-val">
+
+                <hr />
+                <br />
+
+                <div class="slider-div">
+                    <h3>Spread Radius</h3>
+                    <h3 class="spread-val">0px</h3>
+                </div>
+                <input type="range" min="-50" max="50" value="0" class="slider spread-val">
+
+                <div class="slider-div">
+                    <h3>Blur Radius</h3>
+                    <h3 class="blur-val">0px</h3>
+                </div>
+                <input type="range" min="0" max="75" value="0" class="slider blur-val">
+
+                <hr />
+                <br />
+                <div class="colorpicker-div">
+                    <h3>Background color</h3>
+                    <div class='colorpicker-div-right'>
+                        <input class="js-bg-color jscolor {onFineChange:'updateBackgroundColor(this)'}"
+                            value='AEAEAE' />
+                        <input class="color-preview bg-color" maxlength='6' value="AEAEAE" />
+                    </div>
+                </div>
+
+                <div class="colorpicker-div">
+                    <h3>Shadow Color</h3>
+                    <div class='colorpicker-div-right'>
+                        <input class="js-shadow-color jscolor {onFineChange:'updateShadowColor(this)'}"
+                            value='4A4A4A' />
+                        <input class='color-preview shadow-color' maxlength='6' value="4A4A4A" />
+                    </div>
+                </div>
+
+                <div class="colorpicker-div">
+                    <h3>Box Color</h3>
+                    <div class='colorpicker-div-right'>
+                        <input class="js-box-bg-color jscolor {onFineChange:'updateBoxColor(this)'}" value='70EF69' />
+                        <input class='color-preview box-bg-color' maxlength='6' value="70EF69" />
+                    </div>
+                </div>
+
+                <hr />
+                <br />
+
+                <div class="slider-div">
+                    <h3>Shadow Opacity</h3>
+                    <h3 maxlength='5' class="shadow-opacity">100%</h3>
+                </div>
+                <input type="range" step="0.1" min="0" max="100" value="100" class="slider shadow-opacity">
+
+            </div>
+
+            <div class='box-shadow-preview'>
+                <div class="the-box-bg">
+                    <div class='the-box'></div>
+                </div>
+
+                <div class='box-shadow-output'>
+                    <div class="outputs">
+                        <h2 class="general-shadow">box-shadow: 1px 1px 1px #FEFE33FF;</h2>
+                        <h2 class="webkit-shadow">-webkit-box-shadow: 1px 1px 1px #FEFE33FF;</h2>
+                        <h2 class="moz-shadow">-moz-box-shadow: 1px 1px 1px #FEFE33FF;</h2>
+                    </div>
+
+                    <div class="output-saver-loader">
+                        <button class="save-button">Save Preset</button>
+                        <button class="load-button">Load Preset</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="preset-overlay">
+            <div class="save-overlay ">
+                <div class="preset-name">
+                    <h3>Preset Name </h3>
+                    <input maxlength="30" class="preset-name-input" type="text" spellcheck="false" />
+                </div>
+                <hr />
+                <div class="preset-date">
+                    <h3>Attach Date Info</h3>
+                    <div class="preset-date-input">NO</div>
+                </div>
+                <hr />
+                <div class='save-ctrls'>
+                    <button class="save-btn">Save</button>
+                    <button class="cancel-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="preset-overlay2">
+            <div class="load-overlay ">
+                <h3>Your saved presets</h3>
+                <div class="presets-container">
+                    <div class="preset1 "></div>
+                    <div class="preset2 "></div>
+                    <div class="preset3 "></div>
+                    <div class="preset4 "></div>
+                    <div class="preset5 "></div>
+                    <div class="preset6 "></div>
+                </div>
+                <button class="cancel-btn2">Cancel</button>
+            </div>
+        </div>
+        </div>
+
+        <script src='jscolor.js'></script>
+        <script src='./boxShadow.js'></script>
+    </body>
+
+</html>
